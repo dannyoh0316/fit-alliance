@@ -5,7 +5,8 @@ import Next from "./images/next.png"
 import Prev from "./images/prev.png"
 
 export default function onboarding1(props) {
-    const [value, onChangeText] = React.useState('');
+    const [gender, setGender] = React.useState('');
+    const [age, setAge] = React.useState('');
     const { navigate } = props.navigation;
 
     return (
@@ -17,15 +18,15 @@ export default function onboarding1(props) {
 
             <View style={styles.btns}>
                 <TouchableOpacity
-                    style={styles.options}
-                    onPress={() => { }}
+                    style={gender ==="male" ? styles.selected : styles.options}
+                    onPress={() => {setGender("male")}}
                 >
                     <Text style={styles.buttonTitle}>Male</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity
-                    style={styles.options}
-                    onPress={() => { }}
+                    style={gender ==="female" ? styles.selected : styles.options}
+                    onPress={() => {setGender("female")}}
                 >
                     <Text style={styles.buttonTitle}>Female</Text>
                 </TouchableOpacity>
@@ -36,8 +37,8 @@ export default function onboarding1(props) {
 
             <TextInput
                 style={{ height: 40, borderColor: 'gray', borderWidth: 1, color: "white", textAlign: "center" }}
-                onChangeText={text => onChangeText(text)}
-                value={value}
+                onChangeText={age => setAge(age)}
+                value={age}
             />
 
             <TouchableOpacity>
