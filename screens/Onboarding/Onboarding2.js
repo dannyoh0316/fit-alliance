@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react';
+import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import Next from "./images/next.png";
+import Prev from "./images/prev.png";
 import styles from './styles';
-import { Image, Text, TextInput, TouchableOpacity, View, } from 'react-native'
-import Next from "./images/next.png"
-import Prev from "./images/prev.png"
 
 export default function onboarding2(props) {
-    const [value, onChangeText] = React.useState('');
+    const [height, setHeight] = React.useState('');
+    const [weight, setWeight] = React.useState('');
+    const [mentalCondition, setMentalCondition] = React.useState('');
+    
     const { navigate } = props.navigation;
 
     return (
@@ -17,16 +20,16 @@ export default function onboarding2(props) {
             <TextInput
                 className={styles.textinput}
                 style={{ height: 27, borderColor: 'gray', borderWidth: 1, color: "white", textAlign: "center", borderRadius: "16px", marginBottom: "15px" }}
-                onChangeText={text => onChangeText(text)}
-                value={value}
+                onChangeText={height => setHeight(height)}
+                value={height}
             />
 
             <Text style={styles.questions}>What's your weight?</Text>
             <TextInput
                 className={styles.textinput}
                 style={{ height: 27, borderColor: 'gray', borderWidth: 1, color: "white", textAlign: "center", borderRadius: "16px", marginBottom: "15px" }}
-                onChangeText={text => onChangeText(text)}
-                value={value}
+                onChangeText={weight => setWeight(weight)}
+                value={weight}
             />
 
             <Text style={styles.questions}>Do you have any mental conditions?</Text>
@@ -34,8 +37,8 @@ export default function onboarding2(props) {
             <TextInput
                 className={styles.textinput}
                 style={{ height: 60, borderColor: 'gray', borderWidth: 1, color: "white", textAlign: "center", marginBottom: "15px", borderRadius: "16px", width: "260px" }}
-                onChangeText={text => onChangeText(text)}
-                value={value}
+                onChangeText={mentalCondition => setMentalCondition(mentalCondition)}
+                value={mentalCondition}
                 multiline
             />
 
