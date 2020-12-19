@@ -46,7 +46,7 @@ const LoginScreen = ({navigation}) => {
                 keyboardShouldPersistTaps="always">
                 <Image
                     style={styles.logo}
-                    source={require('./../../assets/icon.png')}
+                    source={require('./../../assets/logo.png')}
                 />
 
                 <View style={styles.btns}>
