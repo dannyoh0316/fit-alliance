@@ -15,7 +15,6 @@ const BottomTabNavigator = () => {
     <Tab.Navigator
       tabBarOptions={{
         showLabel: false,
-        activeTintColor: 'orange',
         activeBackgroundColor: 'orange',
         inactiveBackgroundColor: '#1e110d',
       }}>
@@ -23,8 +22,7 @@ const BottomTabNavigator = () => {
         name='Home'
         component={HomeStackNavigator}
         options={{
-          tabBarIcon: () => <Image style={{width: 25, height: 25}} source={require('./../assets/home.png')} />,
-          showLabel: false,
+          tabBarIcon: () => <Image style={{width: 25, height: 25}} source={require('./../assets/home.png')} />
         }}
       />
       <Tab.Screen
