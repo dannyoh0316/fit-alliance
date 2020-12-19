@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { color } from 'react-native-reanimated';
 
 
 const friendsData = [
@@ -45,11 +46,12 @@ const styles = StyleSheet.create({
     marginTop: 10,
     padding: 20,
     alignItems: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: '#000',
     width: '100%'
   },
   friendText: {
-    fontSize: 18
+    fontSize: 18,
+    color: 'white',
   },
 });
 
