@@ -1,6 +1,5 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Icon from 'react-native-vector-icons/FontAwesome5';
 import { Image } from 'react-native';
 import HomeStackNavigator from './HomeStackNavigator';
 import TargetStackNavigator from './TargetStackNavigator';
@@ -18,13 +17,13 @@ const BottomTabNavigator = () => {
         showLabel: false,
         activeTintColor: 'orange',
         activeBackgroundColor: 'orange',
-        inactiveBackgroundColor: 'black',
+        inactiveBackgroundColor: '#1e110d',
       }}>
       <Tab.Screen
         name='Home'
         component={HomeStackNavigator}
         options={{
-          tabBarIcon: ({tintColor}) => <Image style={{width: 25, height: 25}} source={require('./../assets/home.png')} />,
+          tabBarIcon: () => <Image style={{width: 25, height: 25}} source={require('./../assets/home.png')} />,
           showLabel: false,
         }}
       />
@@ -46,7 +45,7 @@ const BottomTabNavigator = () => {
         name='Friends'
         component={FriendsStackNavigator}
         options={{
-          tabBarIcon: () => <Image style={{width: 25, height: 25}} source={require('./../assets/friends.png')} />
+          tabBarIcon: () => <Image style={{width: 30, height: 20}} source={require('./../assets/friends.png')} />
         }}
       />
       <Tab.Screen
