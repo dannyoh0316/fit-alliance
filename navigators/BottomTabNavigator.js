@@ -5,7 +5,7 @@ import HomeStackNavigator from './HomeStackNavigator';
 import LeaderboardStackNavigator from './LeaderboardStackNavigator';
 import FriendsStackNavigator from './FriendsStackNavigator';
 import SettingsStackNavigator from './SettingsStackNavigator';
-
+import OnboardingNavigator from './OnboardingNavigator'
 
 const Tab = createBottomTabNavigator();
 
@@ -18,6 +18,13 @@ const BottomTabNavigator = () => {
         inactiveBackgroundColor: '#1e110d',
         keyboardHidesTabBar: true,
       }}>
+      <Tab.Screen
+        name='onboarding'
+        component={OnboardingNavigator}
+        options={{
+          tabBarIcon: () => <Image style={{width: 25, height: 25}} source={require('./../assets/home.png')} />
+        }}
+      />
       <Tab.Screen
         name='Home'
         component={HomeStackNavigator}
