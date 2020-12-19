@@ -83,5 +83,15 @@ export default StyleSheet.create({
     textinput: {
         borderRadius: 16,
         marginBottom: 15
-    }
+    },
+    selected: {
+        width: 177,
+        height: 42,
+        borderRadius: 16,
+        justifyContent: "center",
+        alignItems: "center",
+        margin: 10,
+        backgroundColor: "#FE6813"
+    },
+
 })
