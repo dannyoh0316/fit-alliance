@@ -4,8 +4,8 @@ import styles from './styles';
 import { firebase } from '../../firebase/config'
 import Item from "./Item";
 
-const Settings = () => {
 
+const Settings = () => {
     const DATA = [
         {
             title: 'My account',
@@ -30,9 +30,7 @@ const Settings = () => {
             title: 'Log out',
             content: 'Log out of your account'
         },
-
     ]
-
 
     const renderItem = ({ item }) => (
         <Item  title={item.title} content={item.content} />
