@@ -14,7 +14,6 @@ const LeaderboardScreen = () => {
     <View style={styles.container}>
       <Text style={styles.header}>Leaderboard</Text>
       <FlatList
-        // ListHeaderComponent={renderHeader}
         data={friendsData}
         keyExtractor={friend => friend.id}
         renderItem={({ item }) => (
@@ -33,7 +32,7 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
       padding: 20,
-      backgroundColor:'#15202B',
+      backgroundColor:'#000',
   },
   header: {
       fontSize:26,

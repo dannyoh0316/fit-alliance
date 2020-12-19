@@ -39,15 +39,11 @@ const Settings = () => {
     return (
         <View style={styles.container}>
             <Text style={styles.header}>Settings</Text>
-
             <FlatList
                 data={DATA}
                 renderItem={renderItem}
                 keyExtractor={item => item.title}
             />
-
-
-
         </View>
     )
 }
