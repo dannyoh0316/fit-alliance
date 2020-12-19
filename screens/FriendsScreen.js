@@ -16,10 +16,10 @@ const FriendsScreen = () => {
 
   const handleSearch = text => {
     const formattedQuery = text.toLowerCase();
-    const filteredData = filter(fullData, user => {
-      return contains(user, formattedQuery);
-    });
-    setData(filteredData);
+    // const filteredData = filter(fullData, user => {
+      // return contains(user, formattedQuery);
+    // });
+    // setData(filteredData);
     setQuery(text);
   };
   
@@ -37,7 +37,7 @@ const FriendsScreen = () => {
     return (
       <View
         style={{
-          backgroundColor: '#fff',
+          backgroundColor: '#333333',
           padding: 10,
           marginVertical: 10,
           borderRadius: 20
@@ -50,7 +50,8 @@ const FriendsScreen = () => {
           value={query}
           onChangeText={queryText => handleSearch(queryText)}
           placeholder="Search"
-          style={{ backgroundColor: '#fff', paddingHorizontal: 20 }}
+          placeholderTextColor='white'
+          style={{ backgroundColor: '#333333', color: 'white', paddingHorizontal: 20 }}
         />
       </View>
     );
