@@ -55,7 +55,8 @@ export default StyleSheet.create({
         textAlign: 'center',
         color: '#8D9BA2',
         fontWeight: 'bold',
-        marginTop: 20
+        marginTop: 15,
+        marginBottom: 15
     },
     txt: {
         color: 'white',
@@ -78,5 +79,19 @@ export default StyleSheet.create({
     },
     dc: {
         backgroundColor: "#34F4F9"
-    }
+    },
+    textinput: {
+        borderRadius: 16,
+        marginBottom: 15
+    },
+    selected: {
+        width: 177,
+        height: 42,
+        borderRadius: 16,
+        justifyContent: "center",
+        alignItems: "center",
+        margin: 10,
+        backgroundColor: "#FE6813"
+    },
+
 })

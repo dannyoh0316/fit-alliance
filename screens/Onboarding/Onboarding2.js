@@ -1,87 +1,54 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react';
+import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import Next from "./images/next.png";
+import Prev from "./images/prev.png";
 import styles from './styles';
-import { firebase } from '../../firebase/config'
-import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native'
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import DropDownPicker from 'react-native-dropdown-picker';
-import Icon from 'react-native-vector-icons/Feather';
 
+export default function onboarding2(props) {
+    const [height, setHeight] = React.useState('');
+    const [weight, setWeight] = React.useState('');
+    const [mentalCondition, setMentalCondition] = React.useState('');
+    
+    const { navigate } = props.navigation;
 
-export default function RecOnboarding(props) {
-
-  const [desc, setDesc] = useState('');
-  const [cause, setCause] = useState('');
-  const [sub, setSub] = useState('Charity'); 
-
-  const handlePress = () => {
-    //store on firebase
-    props.navigation.navigate("Botnav")
-    //navigate to next screen
-  }
-
-    return(
+    return (
         <View style={styles.container}>
-          <KeyboardAwareScrollView
-                style={{ flex: 1, width: '100%' }}
-                keyboardShouldPersistTaps="always">
-          <Text style={styles.title}>Few more questions</Text>
+            <Text style={styles.title}>Few More Questions</Text>
 
             <Text style={styles.title}>Profile setup</Text>
+            <Text style={styles.questions}>What's your height?</Text>
+            <TextInput
+                className={styles.textinput}
+                style={{ height: 27, borderColor: 'gray', borderWidth: 1, color: "white", textAlign: "center", borderRadius: "16px", marginBottom: "15px" }}
+                onChangeText={height => setHeight(height)}
+                value={height}
+            />
 
-          <View style={styles.btns}>
-                    <TouchableOpacity
-                        style={[styles.lbutton, sub==="Charity"? styles.dc:styles.lc]}
-                        onPress={() => setSub("Charity")}
-                        >
-                        <Text style={styles.buttonTitle}>Charity</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        style={[styles.rbutton, sub==="Charity"? styles.lc:styles.dc]}
-                        onPress={() => setSub("Individual")}
-                        >
-                        <Text style={styles.buttonTitle}>Individual</Text>
-                    </TouchableOpacity>
-            </View>
+            <Text style={styles.questions}>What's your weight?</Text>
+            <TextInput
+                className={styles.textinput}
+                style={{ height: 27, borderColor: 'gray', borderWidth: 1, color: "white", textAlign: "center", borderRadius: "16px", marginBottom: "15px" }}
+                onChangeText={weight => setWeight(weight)}
+                value={weight}
+            />
 
-            <Text style={styles.txt}>Introduce your organization</Text>
-            <Text style={styles.tx}>It can be anything - your mission, values, plans, work ... etc.</Text>
+            <Text style={styles.questions}>Do you have any mental conditions?</Text>
 
             <TextInput
-                    style={styles.input}
-                    placeholder='Description'
-                    placeholderTextColor="#aaaaaa"
-                    onChangeText={(text) => setDesc(text)}
-                    value={desc}
-                    underlineColorAndroid="transparent"
-                    autoCapitalize="none"
-                    multiline={true}
-                />
+                className={styles.textinput}
+                style={{ height: 60, borderColor: 'gray', borderWidth: 1, color: "white", textAlign: "center", marginBottom: "15px", borderRadius: "16px", width: "260px" }}
+                onChangeText={mentalCondition => setMentalCondition(mentalCondition)}
+                value={mentalCondition}
+                multiline
+            />
 
-            <View style={styles.picker}>
-              <DropDownPicker
-                    items={[
-                        {label: 'Child Welfare', value: 'uk', icon: () => <Icon name="smile" size={18} color="#900" />},
-                        {label: 'Animal Welfare', value: 'france', icon: () => <Icon name="feather" size={18} color="#900" />},
-                    ]}
-                    defaultValue={cause}
-                    containerStyle={{height: 40}}
-                    style={{backgroundColor: '#34F4F9'}}
-                    itemStyle={{
-                        justifyContent: 'flex-start'
-                    }}
-                    dropDownStyle={{backgroundColor: 'white'}}
-                    onChangeItem={item => setCause(item.value)}
-                />
-            </View>
+            <TouchableOpacity>
+                <Image source={Prev} style={{ width: 50, height: 50, position: "absolute", right: "13px", bottom: "13px" }} />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={navigate("Onboarding2")}>
+                <Image source={Next} style={{ width: 50, height: 50, position: "absolute", left: "13px", bottom: "13px" }} />
+            </TouchableOpacity>
 
-            <TouchableOpacity
-                    style={styles.button}
-                    onPress={handlePress()}
-                >
-                    <Text style={styles.buttonTitle}>Confirm</Text>
-                </TouchableOpacity>
-            
-          </KeyboardAwareScrollView>
         </View>
     )
 }
