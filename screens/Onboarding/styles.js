@@ -4,14 +4,13 @@ export default StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-        backgroundColor: '#14171A',
+        backgroundColor: '#000',
         padding: 20,
     },
     btns: {
         flexDirection: 'column',
         margin: 10,
     },
-
     input: {
         height: 200,
         borderRadius: 30,
@@ -23,16 +22,6 @@ export default StyleSheet.create({
         marginRight: 30,
         paddingLeft: 16,
         color: 'white'
-    },
-    button: {
-        backgroundColor: '#34F4F9',
-        marginLeft: 40,
-        marginRight: 40,
-        marginTop: 20,
-        height: 48,
-        borderRadius: 30,
-        alignItems: "center",
-        justifyContent: 'center'
     },
     options: {
         width: 177,
@@ -58,32 +47,6 @@ export default StyleSheet.create({
         marginTop: 15,
         marginBottom: 15
     },
-    txt: {
-        color: 'white',
-        textAlign: 'center',
-        fontSize: 16,
-        margin: 10
-    },
-    tx: {
-        color: 'white',
-        textAlign: 'center'
-    },
-    picker: {
-        height: 150,
-        marginLeft: 30,
-        marginRight: 30,
-        marginTop: 40
-    },
-    lc: {
-        backgroundColor: "#006666"
-    },
-    dc: {
-        backgroundColor: "#34F4F9"
-    },
-    textinput: {
-        borderRadius: 16,
-        marginBottom: 15
-    },
     selected: {
         width: 177,
         height: 42,
@@ -93,5 +56,10 @@ export default StyleSheet.create({
         margin: 10,
         backgroundColor: "#FE6813"
     },
-
+    arrows: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
+        marginBottom: 10,
+    }
 })
