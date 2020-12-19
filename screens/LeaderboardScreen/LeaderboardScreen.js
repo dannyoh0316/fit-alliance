@@ -1,6 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, FlatList } from 'react-native';
-import { color } from 'react-native-reanimated';
+import { StyleSheet, Text, View } from 'react-native';
 import Leaderboard from './Leaderboard';
 
 

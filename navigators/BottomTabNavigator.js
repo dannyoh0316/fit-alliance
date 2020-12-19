@@ -14,8 +14,9 @@ const BottomTabNavigator = () => {
     <Tab.Navigator
       tabBarOptions={{
         showLabel: false,
-        activeBackgroundColor: 'orange',
+        activeBackgroundColor: '#fe6813',
         inactiveBackgroundColor: '#1e110d',
+        keyboardHidesTabBar: true,
       }}>
       <Tab.Screen
         name='Home'
