@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Leaderboard from './Leaderboard';
+import Selector from './Selector';
 
 
 const LeaderboardScreen = () => {
+  const [selected, setSelected] = useState('weekly');
+
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Leaderboard</Text>
-      <Leaderboard />
+      <Selector selected={selected} setSelected={setSelected} />
+      <Leaderboard selected={selected} />
     </View>
   );
 };

@@ -13,7 +13,7 @@ const leaderboardData = [
     { id: '8', title: 'Harry' },
 ];
 
-const Leaderboard = () => {
+const Leaderboard = ({ selected }) => {
     return (
         <FlatList
             data={leaderboardData}
