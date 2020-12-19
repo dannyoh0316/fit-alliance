@@ -8,9 +8,9 @@ const Stack = createStackNavigator();
 const LeaderboardStackNavigator = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name=' ' component={LeaderboardScreen} />
+      <Stack.Screen name=' ' component={LeaderboardScreen} options={{headerShown: false}} />
     </Stack.Navigator>
-  )
-}
+  );
+};
 
 export default LeaderboardStackNavigator;

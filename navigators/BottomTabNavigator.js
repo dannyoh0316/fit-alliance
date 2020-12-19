@@ -1,6 +1,7 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import { Image } from 'react-native';
 import HomeStackNavigator from './HomeStackNavigator';
 import TargetStackNavigator from './TargetStackNavigator';
 import LeaderboardStackNavigator from './LeaderboardStackNavigator';
@@ -12,40 +13,47 @@ const Tab = createBottomTabNavigator();
 
 const BottomTabNavigator = () => {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+      tabBarOptions={{
+        showLabel: false,
+        activeTintColor: 'orange',
+        activeBackgroundColor: 'orange',
+        inactiveBackgroundColor: 'black',
+      }}>
       <Tab.Screen
         name='Home'
         component={HomeStackNavigator}
         options={{
-          tabBarIcon: () => <Icon name='home' size={25} />
+          tabBarIcon: ({tintColor}) => <Image style={{width: 25, height: 25}} source={require('./../assets/home.png')} />,
+          showLabel: false,
         }}
       />
       <Tab.Screen
         name='Target'
         component={TargetStackNavigator}
         options={{
-          tabBarIcon: () => <Icon name='bullseye' size={25} />
+          tabBarIcon: () => <Image style={{width: 25, height: 25}} source={require('./../assets/target.png')} />
         }}
       />
       <Tab.Screen
         name='Leaderboard'
         component={LeaderboardStackNavigator}
         options={{
-          tabBarIcon: () => <Icon name='chart-bar' size={25} />
+          tabBarIcon: () => <Image style={{width: 25, height: 25}} source={require('./../assets/leaderboard.png')} />
         }}
       />
       <Tab.Screen
         name='Friends'
         component={FriendsStackNavigator}
         options={{
-          tabBarIcon: () => <Icon name='user-friends' size={25} />
+          tabBarIcon: () => <Image style={{width: 25, height: 25}} source={require('./../assets/friends.png')} />
         }}
       />
       <Tab.Screen
         name='Settings'
         component={SettingsStackNavigator}
         options={{
-          tabBarIcon: () => <Icon name='cog' size={25} />
+          tabBarIcon: () => <Image style={{width: 25, height: 25}} source={require('./../assets/settings.png')} />
         }}
       />
     </Tab.Navigator>

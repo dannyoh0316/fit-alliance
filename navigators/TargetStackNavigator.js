@@ -8,9 +8,9 @@ const Stack = createStackNavigator();
 const TargetStackNavigator = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name=' ' component={TargetScreen} />
+      <Stack.Screen name=' ' component={TargetScreen} options={{headerShown: false}} />
     </Stack.Navigator>
-  )
-}
+  );
+};
 
 export default TargetStackNavigator;

@@ -8,9 +8,9 @@ const Stack = createStackNavigator();
 const FriendsStackNavigator = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name=' ' component={FriendsScreen} />
+      <Stack.Screen name=' ' component={FriendsScreen} options={{headerShown: false}} />
     </Stack.Navigator>
-  )
-}
+  );
+};
 
 export default FriendsStackNavigator;
