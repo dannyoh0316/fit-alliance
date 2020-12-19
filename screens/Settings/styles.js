@@ -6,7 +6,7 @@ export default StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         padding: 20,
-        backgroundColor:'#15202B',
+        backgroundColor:'#000',
     },
     header:{
         fontSize:26,

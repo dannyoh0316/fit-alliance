@@ -2,7 +2,6 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Image } from 'react-native';
 import HomeStackNavigator from './HomeStackNavigator';
-import TargetStackNavigator from './TargetStackNavigator';
 import LeaderboardStackNavigator from './LeaderboardStackNavigator';
 import FriendsStackNavigator from './FriendsStackNavigator';
 import SettingsStackNavigator from './SettingsStackNavigator';
@@ -15,21 +14,15 @@ const BottomTabNavigator = () => {
     <Tab.Navigator
       tabBarOptions={{
         showLabel: false,
-        activeBackgroundColor: 'orange',
+        activeBackgroundColor: '#fe6813',
         inactiveBackgroundColor: '#1e110d',
+        keyboardHidesTabBar: true,
       }}>
       <Tab.Screen
         name='Home'
         component={HomeStackNavigator}
         options={{
           tabBarIcon: () => <Image style={{width: 25, height: 25}} source={require('./../assets/home.png')} />
-        }}
-      />
-      <Tab.Screen
-        name='Target'
-        component={TargetStackNavigator}
-        options={{
-          tabBarIcon: () => <Image style={{width: 25, height: 25}} source={require('./../assets/target.png')} />
         }}
       />
       <Tab.Screen
