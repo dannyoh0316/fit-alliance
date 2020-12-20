@@ -35,7 +35,7 @@ const Onboarding1 = ({ navigation }) => {
                 value={age}
             />
             <View style={styles.arrows}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('LoginScreen')}>
                     <Image source={Prev} style={{ width: 50, height: 50}} />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('Onboarding2')}>

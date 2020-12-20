@@ -1,5 +1,7 @@
+import { setStatusBarNetworkActivityIndicatorVisible } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { Image, Text, TouchableOpacity, View } from 'react-native';
+import BottomTabNavigator from '../../navigators/BottomTabNavigator';
 import Next from "./images/next.png";
 import Prev from "./images/prev.png";
 import styles from './styles';
@@ -43,7 +45,7 @@ const Onboarding3 = ({ navigation }) => {
                 <TouchableOpacity onPress={() => navigation.navigate('Onboarding2')}>
                     <Image source={Prev} style={{ width: 50, height: 50}} />
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('BottomTabNavigator')}>
                     <Image source={Next} style={{ width: 50, height: 50}} />
                 </TouchableOpacity>
             </View>

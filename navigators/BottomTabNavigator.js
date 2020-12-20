@@ -5,7 +5,6 @@ import HomeStackNavigator from './HomeStackNavigator';
 import LeaderboardStackNavigator from './LeaderboardStackNavigator';
 import FriendsStackNavigator from './FriendsStackNavigator';
 import SettingsStackNavigator from './SettingsStackNavigator';
-import OnboardingStackNavigator from './OnboardingStackNavigator';
 
 
 const Tab = createBottomTabNavigator();
@@ -21,7 +20,7 @@ const BottomTabNavigator = () => {
       }}>
       <Tab.Screen
         name='Home'
-        component={OnboardingStackNavigator}
+        component={HomeStackNavigator}
         options={{
           tabBarIcon: () => <Image style={{width: 25, height: 25}} source={require('./../assets/home.png')} />
         }}

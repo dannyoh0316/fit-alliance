@@ -4,40 +4,9 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import styles from './styles';
 import { firebase } from '../../firebase/config'
 
-const LoginScreen = ({navigation}) => {
+const LoginScreen = ({ navigation }) => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-
-    const onFooterLinkPress = () => {
-    //     navigation.navigate('Registration')
-    // }
-
-    // const onLoginPress = () => {
-    //     firebase
-    //         .auth()
-    //         .signInWithEmailAndPassword(email, password)
-    //         .then((response) => {
-    //             const uid = response.user.uid
-    //             const usersRef = firebase.firestore().collection('users')
-    //             usersRef
-    //                 .doc(uid)
-    //                 .get()
-    //                 .then(firestoreDocument => {
-    //                     if (!firestoreDocument.exists) {
-    //                         alert("User does not exist anymore.")
-    //                         return;
-    //                     }
-    //                     const user = firestoreDocument.data()
-    //                     navigation.navigate('Home', {user: user})
-    //                 })
-    //                 .catch(error => {
-    //                     alert(error)
-    //                 });
-    //         })
-    //         .catch(error => {
-    //             alert(error)
-    //         })
-    }
 
     return (
         <View style={styles.container}>
@@ -48,20 +17,6 @@ const LoginScreen = ({navigation}) => {
                     style={styles.logo}
                     source={require('./../../assets/logo.png')}
                 />
-
-                <View style={styles.btns}>
-                    <TouchableOpacity
-                        style={styles.lbutton}
-                    >
-                        <Text style={styles.buttonTitle}>Login</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        style={styles.rbutton}
-                        onPress={() => onFooterLinkPress()}>
-                        <Text style={styles.buttonTitle}>SignUp</Text>
-                    </TouchableOpacity>
-                </View>
-
                 <TextInput
                     style={styles.input}
                     placeholder='E-mail'
@@ -83,8 +38,11 @@ const LoginScreen = ({navigation}) => {
                 />
                 <TouchableOpacity
                     style={styles.button}
-                    onPress={() => onLoginPress()}>
+                >
                     <Text style={styles.buttonTitle}>Submit</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('Onboarding1')}>
+                    <Text style={styles.createAccountText}>Create an account</Text>
                 </TouchableOpacity>
             </KeyboardAwareScrollView>
         </View>
