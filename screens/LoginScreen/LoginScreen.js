@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
-import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import React, { useState } from 'react';
+import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import styles from './styles';
-import { firebase } from '../../firebase/config'
+import { storeLogin } from '../../redux/store'
 
-const LoginScreen = ({ navigation }) => {
-    const [email, setEmail] = useState('')
+const LoginScreen = (props) => {
+    const { email, navigation } = props
+    const [localEmail, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
     return (
@@ -22,7 +23,7 @@ const LoginScreen = ({ navigation }) => {
                     placeholder='E-mail'
                     placeholderTextColor="#aaaaaa"
                     onChangeText={(text) => setEmail(text)}
-                    value={email}
+                    value={localEmail}
                     underlineColorAndroid="transparent"
                     autoCapitalize="none"
                 />
@@ -38,10 +39,15 @@ const LoginScreen = ({ navigation }) => {
                 />
                 <TouchableOpacity
                     style={styles.button}
-                    onPress={() => navigation.navigate('BottomTabNavigator')}
+                    onPress={() => {
+                        storeLogin(email)
+                        navigation.navigate('BottomTabNavigator')
+                    }}
                 >
                     <Text style={styles.buttonTitle}>Submit</Text>
                 </TouchableOpacity>
+                <Text style={styles.buttonTitle}>{email != "" ? email : null}</Text>
+
                 <TouchableOpacity onPress={() => navigation.navigate('Onboarding1')}>
                     <Text style={styles.createAccountText}>Create an account</Text>
                 </TouchableOpacity>
@@ -50,4 +56,14 @@ const LoginScreen = ({ navigation }) => {
     )
 }
 
-export default LoginScreen;
+const mapStateToProps = state => {
+    return {
+        email: state.user.email
+    }
+}
+
+const mapDispatchToProps = {
+    storeLogin
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginScreen);
