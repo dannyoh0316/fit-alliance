@@ -3,15 +3,23 @@ import styles from './styles';
 import { Image, Text, TextInput, TouchableOpacity, View, } from 'react-native';
 import Next from "./images/next.png";
 import Prev from "./images/prev.png";
-
+import { useDispatch } from 'react-redux';
+import { storeGender, storeAge } from '../../redux/store'
 
 const Onboarding1 = ({ navigation }) => {
     const [gender, setGender] = useState('');
     const [age, setAge] = useState('');
+    const dispatch = useDispatch()
+
+    const handleNext = () => {
+        dispatch(storeGender(gender))
+        dispatch(storeAge(age))
+        navigation.navigate('Onboarding2')
+    }
 
     return (
         <View style={styles.container}>
-            <View style={{flex: 1}}>
+            <View style={{ flex: 1 }}>
                 <Text style={styles.title}>Welcome onboard!</Text>
                 <Text style={styles.title}>Profile setup</Text>
                 <View style={{ marginTop: 50 }}>
@@ -45,7 +53,7 @@ const Onboarding1 = ({ navigation }) => {
                 <TouchableOpacity onPress={() => navigation.navigate('login')}>
                     <Image source={Prev} style={{ width: 50, height: 50 }} />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('Onboarding2')}>
+                <TouchableOpacity onPress={handleNext}>
                     <Image source={Next} style={{ width: 50, height: 50 }} />
                 </TouchableOpacity>
             </View>

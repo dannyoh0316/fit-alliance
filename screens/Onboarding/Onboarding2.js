@@ -3,12 +3,21 @@ import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import Next from "./images/next.png";
 import Prev from "./images/prev.png";
 import styles from './styles';
-
+import {storeWeight, storeHeight, storeMentalCondition} from '../../redux/store'
+import { useDispatch } from 'react-redux';
 
 const Onboarding2 = ({ navigation }) => {
     const [height, setHeight] = React.useState('');
     const [weight, setWeight] = React.useState('');
     const [mentalCondition, setMentalCondition] = React.useState('');
+    const dispatch = useDispatch()
+
+    const handleNext = () => {
+      dispatch(storeHeight(height))
+      dispatch(storeWeight(weight))
+      dispatch(storeMentalCondition(mentalCondition))
+      navigation.navigate('Onboarding3')
+    }
 
     return (
         <View style={styles.container}>
@@ -40,7 +49,7 @@ const Onboarding2 = ({ navigation }) => {
                 <TouchableOpacity onPress={() => navigation.navigate('Onboarding1')}>
                     <Image source={Prev} style={{ width: 50, height: 50}} />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('Onboarding3')}>
+                <TouchableOpacity onPress={handleNext}>
                     <Image source={Next} style={{ width: 50, height: 50}} />
                 </TouchableOpacity>
             </View>
