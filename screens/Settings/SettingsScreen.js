@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import { FlatList, Keyboard, Text, TextInput, TouchableOpacity, View, Image } from 'react-native'
-import styles from './styles';
-import { firebase } from '../../firebase/config'
+import React from 'react';
+import { FlatList, Text, TouchableOpacity, View } from 'react-native';
 import Item from "./Item";
+import styles from './styles';
 
 
 const Settings = ({ navigation }) => {

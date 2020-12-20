@@ -1,8 +1,8 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, Text, View, FlatList, Image } from 'react-native';
+import { Image, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import FriendsList from './FriendsList';
 import SearchBar from './SearchBar';
-import axios from 'axios';
 
 
 const FriendsScreen = () => {
@@ -22,7 +22,12 @@ const FriendsScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Friends</Text>
+      <View style={styles.header}>
+        <Text style={styles.headerText}>Friends</Text>
+        <TouchableOpacity style={{left: 80, top: 25}}>
+          <Image source={require('../../assets/add-friend.png')}></Image>
+        </TouchableOpacity>
+      </View>
       <SearchBar query={query} setQuery={setQuery} />
       <FriendsList allFriends={allFriends} />
     </View>
@@ -38,6 +43,9 @@ const styles = StyleSheet.create({
       backgroundColor:'#000',
   },
   header: {
+      flexDirection: 'row',
+  },
+  headerText: {
       fontSize: 26,
       textAlign: 'center',
       margin: 20,
