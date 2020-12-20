@@ -2,22 +2,11 @@ import React from 'react';
 import { StyleSheet, Text, View, FlatList, Image } from 'react-native';
 
 
-const friendsData = [
-    { id: '1', title: 'Adam' },
-    { id: '2', title: 'Bob' },
-    { id: '3', title: 'Carl' },
-    { id: '4', title: 'David' },
-    { id: '5', title: 'Ethan' },
-    { id: '6', title: 'Frank' },
-    { id: '7', title: 'Gareth' },
-    { id: '8', title: 'Harry' },
-];
-
-const FriendsList = () => {
+const FriendsList = ({ allFriends }) => {
     return (
         <FlatList
-            data={friendsData}
-            keyExtractor={friend => friend.id}
+            data={allFriends}
+            keyExtractor={friend => friend.friendid}
             renderItem={({ item }) => (
                 <View style={styles.friend}>
                     <Image
@@ -25,7 +14,7 @@ const FriendsList = () => {
                         style={styles.friendImage}
                     />
                     <View style={styles.metaInfo}>
-                        <Text style={styles.friendName}>{item.title}</Text>
+                        <Text style={styles.friendName}>{item.friendname}</Text>
                     </View>
                 </View>
             )}

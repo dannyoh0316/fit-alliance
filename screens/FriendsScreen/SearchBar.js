@@ -5,10 +5,10 @@ import { View, TextInput } from 'react-native';
 const SearchBar = ({ query, setQuery }) => {
     const handleSearch = text => {
         const formattedQuery = text.toLowerCase();
-        // const filteredData = filter(fullData, user => {
-          // return contains(user, formattedQuery);
-        // });
-        // setData(filteredData);
+        const filteredData = filter(fullData, user => {
+          return contains(user, formattedQuery);
+        });
+        setFullData(filteredData);
         setQuery(text);
     };
 

@@ -1,19 +1,30 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View, FlatList, Image } from 'react-native';
 import FriendsList from './FriendsList';
 import SearchBar from './SearchBar';
-// import filter from 'lodash.filter';
+import axios from 'axios';
 
 
 const FriendsScreen = () => {
   const [query, setQuery] = useState('');
-  const [fullData, setFullData] = useState([]);
+  const [allFriends, setAllFriends] = useState([]);
+
+  useEffect(() => {
+    getFriends();
+  }, []);
+
+  const getFriends = async () => {
+    const res = await axios.post('https://us-central1-aiot-fit-xlab.cloudfunctions.net/fitalliancegetfriends', {
+      useremail: 'danny@gmail.com'
+    });
+    setAllFriends(res.data.friends);
+  };
 
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Friends</Text>
       <SearchBar query={query} setQuery={setQuery} />
-      <FriendsList />
+      <FriendsList allFriends={allFriends} />
     </View>
   );
 };

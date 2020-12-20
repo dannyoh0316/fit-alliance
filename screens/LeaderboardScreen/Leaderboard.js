@@ -2,22 +2,11 @@ import React from 'react';
 import { StyleSheet, Text, View, FlatList, Image } from 'react-native';
 
 
-const leaderboardData = [
-    { id: '1', title: 'Adam' },
-    { id: '2', title: 'Bob' },
-    { id: '3', title: 'Carl' },
-    { id: '4', title: 'David' },
-    { id: '5', title: 'Ethan' },
-    { id: '6', title: 'Frank' },
-    { id: '7', title: 'Gareth' },
-    { id: '8', title: 'Harry' },
-];
-
-const Leaderboard = ({ selected }) => {
+const Leaderboard = ({ selected, allFriends }) => {
     return (
         <FlatList
-            data={leaderboardData}
-            keyExtractor={friend => friend.id}
+            data={allFriends}
+            keyExtractor={friend => friend.friendid}
             renderItem={({ item }) => (
                 <View style={styles.friend}>
                     <Image
@@ -25,10 +14,10 @@ const Leaderboard = ({ selected }) => {
                         style={styles.friendImage}
                     />
                     <View style={styles.metaInfo}>
-                        <Text style={styles.friendName}>{item.title}</Text>
+                        <Text style={styles.friendName}>{item.friendname}</Text>
                     </View>
                     <View style={styles.metaInfo}>
-                        <Text style={styles.friendName}>{item.id}</Text>
+                        <Text style={styles.friendName}>{item.friendid}</Text>
                     </View>
                 </View>
             )}
