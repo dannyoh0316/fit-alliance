@@ -1,17 +1,11 @@
 import React from 'react';
 import { Text, StyleSheet, View, TouchableOpacity } from 'react-native';
-import LeaderboardUpdateCard from './LeaderboardUpdateCard';
-import StartWorkout from './StartWorkout';
-import Target from './Target';
 
 
-const HomeScreen = ({ navigation }) => {
+const WorkoutScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Hey, Name!</Text>
-      <LeaderboardUpdateCard navigation={navigation} />
-      <Target />
-      <StartWorkout navigation={navigation} />
+      <Text style={styles.header}>Workout Room</Text>
     </View>
   );
 };
@@ -33,4 +27,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeScreen;
+export default WorkoutScreen;

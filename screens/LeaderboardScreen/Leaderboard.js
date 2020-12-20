@@ -27,6 +27,9 @@ const Leaderboard = ({ selected }) => {
                     <View style={styles.metaInfo}>
                         <Text style={styles.friendName}>{item.title}</Text>
                     </View>
+                    <View style={styles.metaInfo}>
+                        <Text style={styles.friendName}>{item.id}</Text>
+                    </View>
                 </View>
             )}
         />

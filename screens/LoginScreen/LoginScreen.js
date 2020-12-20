@@ -38,6 +38,7 @@ const LoginScreen = ({ navigation }) => {
                 />
                 <TouchableOpacity
                     style={styles.button}
+                    onPress={() => navigation.navigate('BottomTabNavigator')}
                 >
                     <Text style={styles.buttonTitle}>Submit</Text>
                 </TouchableOpacity>

@@ -6,7 +6,7 @@ const StartWorkout = ({ navigation }) => {
     return (
         <>
         <Text style={styles.header}>Start workout session</Text>
-        <TouchableOpacity style={styles.startWorkoutCard} onPress={() => navigation.navigate('Leaderboard')}>
+        <TouchableOpacity style={styles.startWorkoutCard} onPress={() => navigation.navigate('WorkoutScreen')}>
             <Text style={styles.startWorkoutCardText}>
                 Get started
             </Text>

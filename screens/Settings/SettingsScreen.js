@@ -5,7 +5,7 @@ import { firebase } from '../../firebase/config'
 import Item from "./Item";
 
 
-const Settings = () => {
+const Settings = ({ navigation }) => {
     const DATA = [
         {
             title: 'My account',
