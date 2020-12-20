@@ -12,8 +12,8 @@ const App = () => {
   return (
     <Provider store={store}>
       <UserContext.Provider value={user}>
-        <NavigationContainer>
-          {user === null ? <OnboardingStackNavigator /> : <BottomTabNavigator />}
+        <NavigationContainer>        
+          {user != null ? <OnboardingStackNavigator /> : <BottomTabNavigator />}
         </NavigationContainer>
       </UserContext.Provider>
     </Provider>

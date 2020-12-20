@@ -6,27 +6,26 @@ import { storeLogin } from '../../redux/store'
 import { connect, useDispatch, useSelector } from "react-redux"
 import axios from 'axios'
 
-const LoginScreen = (props) => {
+const RegisterScreen = (props) => {
     const { navigation } = props
     const email = useSelector(state => state.user.email)
     const dispatch = useDispatch()
+    const [name, setName] = useState("")
     const [localEmail, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [confirmPassword, setConfirmPassword] = useState("")
 
-    const handleLogin = () => {
-        console.log('login handler')
-        axios.post("https://us-central1-aiot-fit-xlab.cloudfunctions.net/fitalliancelogin", {
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        axios.post("https://us-central1-aiot-fit-xlab.cloudfunctions.net/fitallianceregister", {
+            name: name,
             email: localEmail,
             password: password
         }).then(res => {
-            if (res.status == 200) {
-                dispatch(storeLogin(email))
-                console.log("successful login")
-                navigation.navigate('BottomTabNavigator')
-            } else {
-                console.log("invalid login")
-            }
+            console.log(res.status)
         })
+        dispatch(storeLogin(email))
+        navigation.navigate('Onboarding1')
     }
 
     return (
@@ -37,6 +36,15 @@ const LoginScreen = (props) => {
                 <Image
                     style={styles.logo}
                     source={require('./../../assets/logo.png')}
+                />
+                <TextInput
+                    style={styles.input}
+                    placeholder='Name'
+                    placeholderTextColor="#aaaaaa"
+                    onChangeText={(text) => setName(text)}
+                    value={name}
+                    underlineColorAndroid="transparent"
+                    autoCapitalize="none"
                 />
                 <TextInput
                     style={styles.input}
@@ -57,20 +65,31 @@ const LoginScreen = (props) => {
                     underlineColorAndroid="transparent"
                     autoCapitalize="none"
                 />
+                <TextInput
+                    style={styles.input}
+                    placeholderTextColor="#aaaaaa"
+                    secureTextEntry
+                    placeholder='Confirm password'
+                    onChangeText={(text) => setConfirmPassword(text)}
+                    value={confirmPassword}
+                    underlineColorAndroid="transparent"
+                    autoCapitalize="none"
+                />
                 <TouchableOpacity
                     style={styles.button}
-                    onPress={handleLogin}
+                    onPress={handleSubmit}
                 >
                     <Text style={styles.buttonTitle}>Submit</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={() => navigation.navigate('register')}>
-                    <Text style={styles.createAccountText}>Create an account</Text>
+                <TouchableOpacity onPress={() => navigation.navigate('login')}>
+                    <Text style={styles.createAccountText}>Already have an account? Log in</Text>
                 </TouchableOpacity>
+
             </KeyboardAwareScrollView>
         </View>
     )
 }
 
 
-export default LoginScreen;
+export default RegisterScreen;

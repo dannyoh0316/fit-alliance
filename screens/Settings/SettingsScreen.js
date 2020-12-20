@@ -33,17 +33,22 @@ const Settings = ({ navigation }) => {
     ]
 
     const renderItem = ({ item }) => (
-        <Item  title={item.title} content={item.content} />
+        <Item title={item.title} content={item.content} />
     );
 
     return (
         <View style={styles.container}>
-            <Text style={styles.header}>Settings</Text>
+            <Text style={[styles.header]}>Settings</Text>
+            <TouchableOpacity onPress={() => navigation.navigate('login')}>
+                <Text style={{color: 'white'}}>logout</Text>
+            </TouchableOpacity>
             <FlatList
                 data={DATA}
                 renderItem={renderItem}
                 keyExtractor={item => item.title}
             />
+
+
         </View>
     )
 }

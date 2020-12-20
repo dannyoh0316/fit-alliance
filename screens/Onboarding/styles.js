@@ -7,6 +7,7 @@ export default StyleSheet.create({
         backgroundColor: '#000',
         padding: 20,
         justifyContent: "space-between",
+        display: "flex",
         flexDirection: "column"
     },
     btns: {
@@ -59,7 +60,6 @@ export default StyleSheet.create({
         backgroundColor: "#FE6813"
     },
     arrows: {
-        flex: 1,
         flexDirection: 'row',
         justifyContent: 'flex-end',
         marginBottom: 10,
