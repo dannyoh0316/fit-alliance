@@ -25,7 +25,7 @@ function userReducer(state = { name: "", email: "" }, action) {
     }
 }
 
-rootReducer = combineReducers({
+const rootReducer = combineReducers({
     user: userReducer
 })
 

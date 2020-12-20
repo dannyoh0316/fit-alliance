@@ -3,9 +3,13 @@ import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import styles from './styles';
 import { storeLogin } from '../../redux/store'
+import {connect, useDispatch, useSelector} from "react-redux"
+
 
 const LoginScreen = (props) => {
-    const { email, navigation } = props
+    const { navigation } = props
+    const email = useSelector(state=>state.user.email)
+    const dispatch = useDispatch()
     const [localEmail, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
@@ -40,13 +44,12 @@ const LoginScreen = (props) => {
                 <TouchableOpacity
                     style={styles.button}
                     onPress={() => {
-                        storeLogin(email)
+                        dispatch(storeLogin(email))
                         navigation.navigate('BottomTabNavigator')
                     }}
                 >
                     <Text style={styles.buttonTitle}>Submit</Text>
                 </TouchableOpacity>
-                <Text style={styles.buttonTitle}>{email != "" ? email : null}</Text>
 
                 <TouchableOpacity onPress={() => navigation.navigate('Onboarding1')}>
                     <Text style={styles.createAccountText}>Create an account</Text>
@@ -56,14 +59,5 @@ const LoginScreen = (props) => {
     )
 }
 
-const mapStateToProps = state => {
-    return {
-        email: state.user.email
-    }
-}
 
-const mapDispatchToProps = {
-    storeLogin
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(LoginScreen);
+export default LoginScreen;

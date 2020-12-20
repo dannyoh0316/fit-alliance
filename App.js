@@ -4,7 +4,7 @@ import BottomTabNavigator from './navigators/BottomTabNavigator';
 import UserContext from './contexts/UserContext';
 import OnboardingStackNavigator from './navigators/OnboardingStackNavigator';
 import { Provider } from 'react-redux'
-
+import store from "./redux/store"
 
 const App = () => {
   const [user, setUser] = useState("hi");
