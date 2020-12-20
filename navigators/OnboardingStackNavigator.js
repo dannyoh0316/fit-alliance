@@ -9,7 +9,7 @@ import BottomTabNavigator from './BottomTabNavigator';
 
 const Stack = createStackNavigator();
 
-const OnboardingStackNavigator = ({ setUser }) => {
+const OnboardingStackNavigator = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen name='LoginScreen' component={LoginScreen} options={{headerShown: false}} />

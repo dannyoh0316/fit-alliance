@@ -27,11 +27,11 @@ const styles = StyleSheet.create({
       backgroundColor:'#000',
   },
   header: {
-      fontSize:26,
-      textAlign:'center',
-      margin:20,
-      color:'white',
-      fontWeight:'bold',
+      fontSize: 26,
+      textAlign: 'center',
+      margin: 20,
+      color: 'white',
+      fontWeight: 'bold',
   },
 });
 
