@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fe6813',
     },
     questText: {
-        fontSize: 20,
+        fontSize: 17,
         textAlign: 'center',
         margin: 10,
         color: 'white',
