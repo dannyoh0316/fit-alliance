@@ -17,14 +17,14 @@ const Onboarding2 = ({ navigation }) => {
             <Text style={styles.questions}>What's your height?</Text>
             <TextInput
                 className={styles.textinput}
-                style={{ height: 27, borderColor: 'gray', borderWidth: 1, color: "white", textAlign: "center", borderRadius: 16, marginBottom: 15 }}
+                style={{ height: 27, width: 166, borderColor: 'gray', borderWidth: 1, color: "white", textAlign: "center", borderRadius: 16, marginBottom: 15 }}
                 onChangeText={height => setHeight(height)}
                 value={height}
             />
             <Text style={styles.questions}>What's your weight?</Text>
             <TextInput
                 className={styles.textinput}
-                style={{ height: 27, borderColor: 'gray', borderWidth: 1, color: "white", textAlign: "center", borderRadius: 16, marginBottom: 15 }}
+                style={{ height: 27, width: 166, borderColor: 'gray', borderWidth: 1, color: "white", textAlign: "center", borderRadius: 16, marginBottom: 15 }}
                 onChangeText={weight => setWeight(weight)}
                 value={weight}
             />
