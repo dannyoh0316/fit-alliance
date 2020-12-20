@@ -6,6 +6,8 @@ export default StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#000',
         padding: 20,
+        justifyContent: "space-between",
+        flexDirection: "column"
     },
     btns: {
         flexDirection: 'column',

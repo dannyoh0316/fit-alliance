@@ -6,13 +6,14 @@ import OnboardingStackNavigator from './navigators/OnboardingStackNavigator';
 
 
 const App = () => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState("hi");
 
 
   return (
     <UserContext.Provider value={user}>
       <NavigationContainer>
-        {user === null ? <OnboardingStackNavigator /> : <BottomTabNavigator />}
+      <OnboardingStackNavigator />
+        {/* {user === null ? <OnboardingStackNavigator /> : <BottomTabNavigator />} */}
       </NavigationContainer>
     </UserContext.Provider>
   );

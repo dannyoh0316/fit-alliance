@@ -86,8 +86,10 @@ export default StyleSheet.create({
         fontSize: 16
     },
     createAccountText: {
+        marginTop: 15,
         color: '#fe6813',
         fontSize: 13,
         alignContent: 'center',
+        textAlign: 'center'
     }
 })
