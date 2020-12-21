@@ -25,7 +25,7 @@ const WorkoutRoom = ({ navigation }) => {
       </Text>
       <BonusQuests selected={selected} toggleSelect={toggleSelect} isSelected={isSelected} />
       <TouchableOpacity style={styles.connectDevices} onPress={() => navigation.navigate('WorkoutConnect')}>
-        <Text style={styles.connectDevicesText}>Connect Devices</Text>
+        <Text style={styles.connectDevicesText}>Connect devices</Text>
       </TouchableOpacity>
     </View>
   );

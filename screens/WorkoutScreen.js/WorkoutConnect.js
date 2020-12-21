@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import Devices from './Devices';
 
 
 const WorkoutConnect = ({ navigation }) => {
@@ -15,9 +16,11 @@ const WorkoutConnect = ({ navigation }) => {
         <TouchableOpacity style={{right: 40, top: 15}} onPress={() => navigation.navigate('WorkoutRoom')}>
           <Image source={require('../Onboarding/images/prev.png')}></Image>
         </TouchableOpacity>
-        <Text style={styles.headerText}>Workout Connect</Text>
+        <Text style={styles.headerText}>Connect Devices</Text>
       </View>
-      <TouchableOpacity style={styles.connectDevices} onPress={() => navigation.navigate('WorkoutConnect')}>
+      <Text style={styles.bonusText}>Searching for devices...</Text>
+      <Devices />
+      <TouchableOpacity style={styles.connectDevices} onPress={() => navigation.navigate('SessionScreen')}>
         <Text style={styles.connectDevicesText}>Start session</Text>
       </TouchableOpacity>
     </View>

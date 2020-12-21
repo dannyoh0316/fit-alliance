@@ -33,16 +33,16 @@ const styles = StyleSheet.create({
     friendName: {
       fontSize: 20,
       width: 200,
-      top: 25,
+      top: 20,
       color: 'white',
     },
     friendImage: {
-      width: 75,
-      height: 75,
+      width: 65,
+      height: 65,
       borderRadius: 50,
     },
     metaInfo: {
-      marginLeft: 40,
+      marginLeft: 20,
     },
 });
 

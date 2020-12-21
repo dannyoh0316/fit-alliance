@@ -41,9 +41,6 @@ const Settings = ({ navigation }) => {
             <TouchableOpacity onPress={() => navigation.navigate('login')}>
                 <Text style={{color: 'white'}}>logout</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate('Onboarding3')}>
-                <Text style={{color: 'white'}}>logout</Text>
-            </TouchableOpacity>
             <FlatList
                 data={DATA}
                 renderItem={renderItem}

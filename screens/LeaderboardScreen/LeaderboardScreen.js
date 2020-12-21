@@ -17,7 +17,9 @@ const LeaderboardScreen = () => {
     const res = await axios.post('https://us-central1-aiot-fit-xlab.cloudfunctions.net/fitalliancegetfriends', {
       useremail: 'danny@gmail.com'
     });
-    setAllFriends(res.data.friends);
+    const friends = res.data.friends;
+    friends.unshift({friendemail: "danny@gmail.com", friendid: -1, friendname: "Danny", friendpic: ""});
+    setAllFriends(friends);
   };
 
   return (

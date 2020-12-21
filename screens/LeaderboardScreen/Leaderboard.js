@@ -16,9 +16,7 @@ const Leaderboard = ({ selected, allFriends }) => {
                     <View style={styles.metaInfo}>
                         <Text style={styles.friendName}>{item.friendname}</Text>
                     </View>
-                    <View style={styles.metaInfo}>
-                        <Text style={styles.friendName}>{item.friendid}</Text>
-                    </View>
+                    <Text style={styles.friendName}>1000</Text>
                 </View>
             )}
         />
@@ -36,16 +34,16 @@ const styles = StyleSheet.create({
     friendName: {
       fontSize: 20,
       width: 200,
-      top: 25,
+      top: 20,
       color: 'white',
     },
     friendImage: {
-      width: 75,
-      height: 75,
+      width: 65,
+      height: 65,
       borderRadius: 50,
     },
     metaInfo: {
-      marginLeft: 40,
+      marginLeft: 20,
     },
 });
 
